@@ -1,0 +1,70 @@
+body {
+    background-color: lavender;
+    text-align: center;
+}
+
+button {
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    height: 60px; 
+    margin: 5px; 
+    width: 30%;
+}
+
+div {
+    border-radius: 5px;
+    border-color: black;
+}
+
+img {
+    height: 250px;
+    border-radius: 20px;
+
+}
+
+.column1 {
+    float: left;
+    width: 40%;
+}
+
+.column2 {
+    float: right;
+    width: 40%;
+}
+
+#ansbtn {
+    background-color: white;
+    font-size: 20px;
+    height: 60px;
+    width: 100%;
+    
+}
+
+#btn1 {
+    font-size: 20px;
+}
+
+#btn2 {
+    font-size: 20px;
+}
+
+#correct {
+    background-color: white;
+    font-size: 20px;
+    height: 60px;
+    width: 100%;
+    
+}
+
+#next {
+    background-color: white;
+    height: 50px;
+    width: 25%;
+}
+
+#small {
+    background-color: white;
+    height: 30px;
+    width: 15%;
+}
