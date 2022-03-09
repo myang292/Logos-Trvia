@@ -2,10 +2,26 @@
 let correct = document.querySelectorAll('#correct');
 let incorrect = document.querySelectorAll('#ansbtn');
 let nextbtn = document.querySelector('#next');
+let img = document.querySelector('#img');
+// let ans = document.querySelector('.ans')
+let question = 0
+
+
+// function startGame() {
+//     img.innerText = imgURL[question].imgURL;
+//     ans.forEach(function(ans, i) {
+//         ans.innerText = imgURL[question].choices[i];
+//         }
+//         )
+//         console.log(img.innerText)
+// }
+
+
 // const NextPage = () => {};
 let isGameFinished = false;
 
 
+//NIK HELP
 let checkAnswer = (e) => {
     // console.log('is game finished?', isGameFinished)
     if (isGameFinished === true) {
@@ -34,13 +50,22 @@ document.addEventListener('click', (e) => {
     }
 )
 
-
+document.addEventListener('click', (e) => {
+    if (e.target.id == 'nextbtn') {
+        img.innerText = imgURL[question+1].imgURL;
+        answer.forEach(function(choice, i) {
+            ans.innerText = imgURL[question+1].choices[i];
+        }
+        )
+    }
+}
+)
+console.log(imgURL[1].imgURL)
 
 //use for loop (i++ for questions etc)
 
-
 //DOM = INNER TEXT
-let questions = [
+let imgURL = [
     {
         imgURL: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Wikipedia-logo-blank.png',
         choices: ['Wikipedia', 'Wiki Commons', 'Wiki How', 'Wiki Fandom'],
