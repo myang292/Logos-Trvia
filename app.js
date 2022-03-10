@@ -50,7 +50,7 @@ let checkAnswer = (e) => {
             nextbtn.style.visibility = 'visible'
             isGameFinished = true
             // console.log('correct!', isGameFinished)
-        } else if (e.target.id == 'ansbtn1') {
+        } else if (e.target.id == 'ansbtn1' || e.target.id == 'ansbtn3' || e.target.id == 'ansbtn4') {
             e.target.style.backgroundColor = 'red'
             nextbtn.style.display = 'center'
             nextbtn.style.visibility = 'visible'
@@ -58,17 +58,7 @@ let checkAnswer = (e) => {
             // correct.style.visibility = 'hidden'
             // console.log('false!', isGameFinished)
             // console.log(e.style.id)
-        } else if (e.target.id == 'ansbtn3') {
-            e.target.style.backgroundColor = 'red'
-            nextbtn.style.display = 'center'
-            nextbtn.style.visibility = 'visible'
-            isGameFinished = true
-        } else if (e.target.id == 'ansbtn4') {
-            e.target.style.backgroundColor = 'red'
-            nextbtn.style.display = 'center'
-            nextbtn.style.visibility = 'visible'
-            isGameFinished = true
-    }
+        }
     }
 }
 
@@ -90,8 +80,8 @@ document.addEventListener('click', (e) => {
         ans4.innerText = qImgURL[1].choices[3];
         whiteDivs();
         isGameFinished = true;
+        }
     }
-}
 )
 
 // document.addEventListener('click', (e) => {
