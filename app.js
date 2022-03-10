@@ -8,7 +8,17 @@ let ans2 = document.querySelector('#ansbtn2')
 let ans3 = document.querySelector('#ansbtn3')
 let ans4 = document.querySelector('#ansbtn4')
 let quest = document.querySelector('h1')
+let answers = document.querySelectorAll('.ans')
+let whiteDivs = () => {
+    answers[0].style.backgroundColor = 'white';
+    answers[1].style.backgroundColor = 'white';
+    answers[2].style.backgroundColor = 'white';
+    answers[3].style.backgroundColor = 'white';
+}
 
+// console.log(answers[1].innerText)
+
+// console.log(answers.style.color)
 // let question = 0
 
 // console.log(ans1.innerText)
@@ -34,20 +44,31 @@ let checkAnswer = (e) => {
         return
     } else {
         // console.log('not finished yet')
-        if (e.target.id == 'correct') {
+        if (e.target.id == 'ansbtn2') {
             e.target.style.backgroundColor = 'green' 
             nextbtn.style.display = 'center'
             nextbtn.style.visibility = 'visible'
-            // console.log('correct!', isGameFinished)
             isGameFinished = true
-        } else if (e.target.id == 'ansbtn1' || 'ansbtn2' || 'ansbtn3') {
+            // console.log('correct!', isGameFinished)
+        } else if (e.target.id == 'ansbtn1') {
             e.target.style.backgroundColor = 'red'
             nextbtn.style.display = 'center'
             nextbtn.style.visibility = 'visible'
-            // correct.style.visibility = 'hidden'
-            // console.log('false!')
             isGameFinished = true
-        } 
+            // correct.style.visibility = 'hidden'
+            // console.log('false!', isGameFinished)
+            // console.log(e.style.id)
+        } else if (e.target.id == 'ansbtn3') {
+            e.target.style.backgroundColor = 'red'
+            nextbtn.style.display = 'center'
+            nextbtn.style.visibility = 'visible'
+            isGameFinished = true
+        } else if (e.target.id == 'ansbtn4') {
+            e.target.style.backgroundColor = 'red'
+            nextbtn.style.display = 'center'
+            nextbtn.style.visibility = 'visible'
+            isGameFinished = true
+    }
     }
 }
 
@@ -67,6 +88,24 @@ document.addEventListener('click', (e) => {
         ans3.innerText = qImgURL[1].choices[2];
         // let ans3 = 'correct';
         ans4.innerText = qImgURL[1].choices[3];
+        whiteDivs();
+        isGameFinished = true;
+    }
+}
+)
+
+// document.addEventListener('click', (e) => {
+//     if (e.target.id == 'next') {
+//         quest.innerText = 'Question 3'
+//         img.src = qImgURL[2].imgURL;
+//         ans1.innerText = qImgURL[2].choices[0];
+//         ans2.innerText = qImgURL[2].choices[1];
+//         ans3.innerText = qImgURL[2].choices[2];
+//         // let ans3 = 'correct';
+//         ans4.innerText = qImgURL[2].choices[3];
+//         whiteDivs();
+
+        // console.log(ans.style.backgroundColor)
 
         // console.log(qImgURL[1].choices[0])
         // qImgURL.forEach(function(e) {
@@ -75,11 +114,11 @@ document.addEventListener('click', (e) => {
             //         ans.innerText = qImgURL[i].choices[i];
                     // console.log(qImgURL[i].choices[i]
                         
-                    // }
-            }
-        }
-)
+//                     // }
+//             }
+//         }
 // )
+// // )
 
 // }
 // )
