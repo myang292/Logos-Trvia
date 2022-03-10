@@ -16,52 +16,8 @@ let whiteDivs = () => {
     answers[3].style.backgroundColor = 'white';
 }
 
-// console.log(answers[1].innerText)
-
-// console.log(answers.style.color)
-// let question = 0
-
-// console.log(ans1.innerText)
-
-// function startGame() {
-//     img.innerText = imgURL[question].imgURL;
-//     ans.forEach(function(ans, i) {
-//         ans.innerText = imgURL[question].choices[i];
-//         }
-//         )
-//         console.log(img.innerText)
-// }
-
-
-// const NextPage = () => {};
 let isGameFinished = false;
 
-
-
-
-//use for loop (i++ for questions etc)
-
-
-
-
-
-
-        // console.log(qImgURL[1].choices[0])
-
-        // qImgURL.forEach(function(e) {
-           
-            // }
-//         }
-// )
-// // )
-
-// }
-// )
-
-
-// console.log(qImgURL[0].imgURL)
-
-//DOM = INNER TEXT
 const qImgURL = [
     {
         imgURL: 'https://i.insider.com/500851a2ecad04bd32000001?width=600&format=jpeg&auto=webp',
@@ -115,15 +71,8 @@ const qImgURL = [
     },
 ]
 
-// console.log(qImgURL[0].choices[0])
-
-// let i = 0
-
-
-// if (e.target.id == 'next') {
-
 //NIK HELP
-let checkAnswer = (e) => {
+let checkAnswer = (e, correctAnswer) => {
     // console.log('is game finished?', isGameFinished)
     if (isGameFinished === true) {
         return
@@ -146,70 +95,32 @@ let checkAnswer = (e) => {
         }
     }
 }
+let page = 0;
 
 document.addEventListener('click', (e) => {
-        checkAnswer(e)
+    let correctAnswer = qImgURL[page].answer;
+    checkAnswer(e, correctAnswer);
     }
 )
 
-
-let count = 0;
-
-    document.addEventListener('click', (e) => {
+document.addEventListener('click', (e) => {
         if (e.target.id == 'next') {
-            console.log(count)
-//PETER HELPED ME WITH COUNT++
-            count++;
-            img.src = qImgURL[count].imgURL;
-            ans1.innerText = qImgURL[count].choices[0];
-            ans2.innerText = qImgURL[count].choices[1];
-            ans3.innerText = qImgURL[count].choices[2];
-            ans4.innerText = qImgURL[count].choices[3]; 
-            //hide next button
-            whiteDivs()
+            console.log(page)
+//PETER HELPED ME WITH page++
+            page++;
+            img.src = qImgURL[page].imgURL;
+            ans1.innerText = qImgURL[page].choices[0];
+            ans2.innerText = qImgURL[page].choices[1];
+            ans3.innerText = qImgURL[page].choices[2];
+            ans4.innerText = qImgURL[page].choices[3]; 
+            let correctAnswer = qImgURL[page].answer;
+            nextbtn.style.visibility = 'hidden';
+            whiteDivs();
+            console.log(correctAnswer)
+            // checkAnswer(correctAnswer);
         }
     }   
 )
 
-
-
-    // for (let i=0; i<qImgURL.length; i++) {
-
-        
-// qImgURL.forEach(i => {
-//     // let i = qImgURL;
-//     console.log(qImgURL[i])  
-    // document.addEventListener('click', (e) => {
-    //     if (e.target.id == 'next') {
-    //         ans1.innerText = qImgURL[i];
-    //         ans2.innerText = qImgURL[i];
-    //         ans3.innerText = qImgURL[i];
-    //         ans4.innerText = qImgURL[i];  
-            // ans1.innerText = qImgURL[e];
-            // ans2.innerText = qImgURL[e];
-            // ans3.innerText = qImgURL[e];
-            // ans4.innerText = qImgURL[e];
-            
-            
-// console.log(qImgURL[e])   
-    // console.log(qImgURL[i].choices[0]);
-// }
-    // }
-// }
-
-
-
-    // document.addEventListener('click', (e) => {
-    //         if (e.target.id == 'next') {
-    //                 quest.innerText = 'Question 2'
-    //                 img.src = qImgURL[1].imgURL;
-    //                 ans1.innerText = qImgURL[i].choices[0];
-    //                 ans2.innerText = qImgURL[i].choices[1];
-    //                 ans3.innerText = qImgURL[i].choices[2];
-    //                 // let ans3 = 'correct';
-    //                 ans4.innerText = qImgURL[i].choices[3];
-    //                 whiteDivs();
-    //                 isGameFinished = true;
-    //                 }
-    //             }
-    //         )
+//TO DO 
+    //STOP QUESTIONS AT 9
