@@ -3,7 +3,7 @@ let correct = document.querySelectorAll('#correct');
 let incorrect = document.querySelectorAll('#ansbtn');
 let nextbtn = document.querySelector('#next');
 let img = document.querySelector('#img');
-// let ans = document.querySelector('.ans')
+let ans = document.querySelector('.ans')
 let question = 0
 
 
@@ -50,31 +50,53 @@ document.addEventListener('click', (e) => {
     }
 )
 
-document.addEventListener('click', (e) => {
-    if (e.target.id == 'nextbtn') {
-        img.innerText = imgURL[question+1].imgURL;
-        answer.forEach(function(choice, i) {
-            ans.innerText = imgURL[question+1].choices[i];
-        }
-        )
-    }
-}
-)
-console.log(imgURL[1].imgURL)
-
 //use for loop (i++ for questions etc)
 
+document.addEventListener('click', (e) => {
+    
+}
+)  
+    
+    
+    
+    
+    
+    
+    
+    
+    
+//     if (e.target.id == 'next') {
+//         img.src = qImgURL[1].imgURL;
+//         // qImgURL.forEach(function(e) {
+//             for (let i=0; i<qImgURL.length; i++) {
+//                 qImgURL.forEach(function(e) {
+//                     ans.innerText = qImgURL[i].choices[i];
+//                     console.log(qImgURL[i].choices[i]
+//                         )
+//                     }
+//                 )
+//             }
+//         // }
+//         }
+//     }
+// )
+// }
+// )
+
+
+// console.log(qImgURL[0].imgURL)
+
 //DOM = INNER TEXT
-let imgURL = [
-    {
-        imgURL: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Wikipedia-logo-blank.png',
-        choices: ['Wikipedia', 'Wiki Commons', 'Wiki How', 'Wiki Fandom'],
-        answer: 1,
-    },
+let qImgURL = [
     {
         imgURL: 'https://i.insider.com/500851a2ecad04bd32000001?width=600&format=jpeg&auto=webp',
         choices: ['Frito Lay', 'Fritos', 'Lay', 'Ruffles'],
         answer: 3,
+    },
+    {
+        imgURL: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Wikipedia-logo-blank.png',
+        choices: ['Wikipedia', 'Wiki Commons', 'Wiki How', 'Wiki Fandom'],
+        answer: 1,
     },
     {
         imgURL: 'http://2.bp.blogspot.com/--DHkNIsSurk/UcD11IDiW1I/AAAAAAAAACo/01q1ErjNVKo/s1600/RGB_Blue_Type_Tile_Only_0.jpg',
@@ -117,3 +139,4 @@ let imgURL = [
         answer: 3,
     },
 ]
+
