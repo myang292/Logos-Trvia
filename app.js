@@ -3,9 +3,15 @@ let correct = document.querySelectorAll('#correct');
 let incorrect = document.querySelectorAll('#ansbtn');
 let nextbtn = document.querySelector('#next');
 let img = document.querySelector('#img');
-let ans = document.querySelector('.ans')
-let question = 0
+let ans1 = document.querySelector('#ansbtn1')
+let ans2 = document.querySelector('#ansbtn2')
+let ans3 = document.querySelector('#ansbtn3')
+let ans4 = document.querySelector('#ansbtn4')
+let quest = document.querySelector('h1')
 
+// let question = 0
+
+// console.log(ans1.innerText)
 
 // function startGame() {
 //     img.innerText = imgURL[question].imgURL;
@@ -34,7 +40,7 @@ let checkAnswer = (e) => {
             nextbtn.style.visibility = 'visible'
             // console.log('correct!', isGameFinished)
             isGameFinished = true
-        } else if (e.target.id == 'ansbtn') {
+        } else if (e.target.id == 'ansbtn1' || 'ansbtn2' || 'ansbtn3') {
             e.target.style.backgroundColor = 'red'
             nextbtn.style.display = 'center'
             nextbtn.style.visibility = 'visible'
@@ -53,33 +59,28 @@ document.addEventListener('click', (e) => {
 //use for loop (i++ for questions etc)
 
 document.addEventListener('click', (e) => {
-    
-}
-)  
-    
-    
-    
-    
-    
-    
-    
-    
-    
-//     if (e.target.id == 'next') {
-//         img.src = qImgURL[1].imgURL;
-//         // qImgURL.forEach(function(e) {
-//             for (let i=0; i<qImgURL.length; i++) {
-//                 qImgURL.forEach(function(e) {
-//                     ans.innerText = qImgURL[i].choices[i];
-//                     console.log(qImgURL[i].choices[i]
-//                         )
-//                     }
-//                 )
-//             }
-//         // }
-//         }
-//     }
+    if (e.target.id == 'next') {
+        quest.innerText = 'Question 2'
+        img.src = qImgURL[1].imgURL;
+        ans1.innerText = qImgURL[1].choices[0];
+        ans2.innerText = qImgURL[1].choices[1];
+        ans3.innerText = qImgURL[1].choices[2];
+        // let ans3 = 'correct';
+        ans4.innerText = qImgURL[1].choices[3];
+
+        // console.log(qImgURL[1].choices[0])
+        // qImgURL.forEach(function(e) {
+            // for (let i=0; i<qImgURL.length; i++) {
+            //     qImgURL.forEach(function(e) {
+            //         ans.innerText = qImgURL[i].choices[i];
+                    // console.log(qImgURL[i].choices[i]
+                        
+                    // }
+            }
+        }
+)
 // )
+
 // }
 // )
 
