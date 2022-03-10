@@ -37,75 +37,20 @@ let whiteDivs = () => {
 let isGameFinished = false;
 
 
-//NIK HELP
-let checkAnswer = (e) => {
-    // console.log('is game finished?', isGameFinished)
-    if (isGameFinished === true) {
-        return
-    } else {
-        // console.log('not finished yet')
-        if (e.target.id == 'ansbtn2') {
-            e.target.style.backgroundColor = 'green' 
-            nextbtn.style.display = 'center'
-            nextbtn.style.visibility = 'visible'
-            isGameFinished = true
-            // console.log('correct!', isGameFinished)
-        } else if (e.target.id == 'ansbtn1' || e.target.id == 'ansbtn3' || e.target.id == 'ansbtn4') {
-            e.target.style.backgroundColor = 'red'
-            nextbtn.style.display = 'center'
-            nextbtn.style.visibility = 'visible'
-            isGameFinished = true
-            // correct.style.visibility = 'hidden'
-            // console.log('false!', isGameFinished)
-            // console.log(e.style.id)
-        }
-    }
-}
 
-document.addEventListener('click', (e) => {
-        checkAnswer(e)
-    }
-)
 
 //use for loop (i++ for questions etc)
 
-document.addEventListener('click', (e) => {
-    if (e.target.id == 'next') {
-        quest.innerText = 'Question 2'
-        img.src = qImgURL[1].imgURL;
-        ans1.innerText = qImgURL[1].choices[0];
-        ans2.innerText = qImgURL[1].choices[1];
-        ans3.innerText = qImgURL[1].choices[2];
-        // let ans3 = 'correct';
-        ans4.innerText = qImgURL[1].choices[3];
-        whiteDivs();
-        isGameFinished = true;
-        }
-    }
-)
 
-// document.addEventListener('click', (e) => {
-//     if (e.target.id == 'next') {
-//         quest.innerText = 'Question 3'
-//         img.src = qImgURL[2].imgURL;
-//         ans1.innerText = qImgURL[2].choices[0];
-//         ans2.innerText = qImgURL[2].choices[1];
-//         ans3.innerText = qImgURL[2].choices[2];
-//         // let ans3 = 'correct';
-//         ans4.innerText = qImgURL[2].choices[3];
-//         whiteDivs();
 
-        // console.log(ans.style.backgroundColor)
+
+
 
         // console.log(qImgURL[1].choices[0])
+
         // qImgURL.forEach(function(e) {
-            // for (let i=0; i<qImgURL.length; i++) {
-            //     qImgURL.forEach(function(e) {
-            //         ans.innerText = qImgURL[i].choices[i];
-                    // console.log(qImgURL[i].choices[i]
-                        
-//                     // }
-//             }
+           
+            // }
 //         }
 // )
 // // )
@@ -117,7 +62,7 @@ document.addEventListener('click', (e) => {
 // console.log(qImgURL[0].imgURL)
 
 //DOM = INNER TEXT
-let qImgURL = [
+const qImgURL = [
     {
         imgURL: 'https://i.insider.com/500851a2ecad04bd32000001?width=600&format=jpeg&auto=webp',
         choices: ['Frito Lay', 'Fritos', 'Lay', 'Ruffles'],
@@ -170,3 +115,101 @@ let qImgURL = [
     },
 ]
 
+// console.log(qImgURL[0].choices[0])
+
+// let i = 0
+
+
+// if (e.target.id == 'next') {
+
+//NIK HELP
+let checkAnswer = (e) => {
+    // console.log('is game finished?', isGameFinished)
+    if (isGameFinished === true) {
+        return
+    } else {
+        // console.log('not finished yet')
+        if (e.target.id == 'ansbtn2') {
+            e.target.style.backgroundColor = 'green' 
+            nextbtn.style.display = 'center'
+            nextbtn.style.visibility = 'visible'
+            isGameFinished = true
+            // console.log('correct!', isGameFinished)
+        } else if (e.target.id == 'ansbtn1' || e.target.id == 'ansbtn3' || e.target.id == 'ansbtn4') {
+            e.target.style.backgroundColor = 'red'
+            nextbtn.style.display = 'center'
+            nextbtn.style.visibility = 'visible'
+            isGameFinished = true
+            // correct.style.visibility = 'hidden'
+            // console.log('false!', isGameFinished)
+            // console.log(e.style.id)
+        }
+    }
+}
+
+document.addEventListener('click', (e) => {
+        checkAnswer(e)
+    }
+)
+
+
+let count = 0;
+
+    document.addEventListener('click', (e) => {
+        if (e.target.id == 'next') {
+            console.log(count)
+//PETER HELPED ME WITH COUNT++
+            count++;
+            img.src = qImgURL[count].imgURL;
+            ans1.innerText = qImgURL[count].choices[0];
+            ans2.innerText = qImgURL[count].choices[1];
+            ans3.innerText = qImgURL[count].choices[2];
+            ans4.innerText = qImgURL[count].choices[3]; 
+            //hide next button
+            whiteDivs()
+        }
+    }   
+)
+
+
+
+    // for (let i=0; i<qImgURL.length; i++) {
+
+        
+// qImgURL.forEach(i => {
+//     // let i = qImgURL;
+//     console.log(qImgURL[i])  
+    // document.addEventListener('click', (e) => {
+    //     if (e.target.id == 'next') {
+    //         ans1.innerText = qImgURL[i];
+    //         ans2.innerText = qImgURL[i];
+    //         ans3.innerText = qImgURL[i];
+    //         ans4.innerText = qImgURL[i];  
+            // ans1.innerText = qImgURL[e];
+            // ans2.innerText = qImgURL[e];
+            // ans3.innerText = qImgURL[e];
+            // ans4.innerText = qImgURL[e];
+            
+            
+// console.log(qImgURL[e])   
+    // console.log(qImgURL[i].choices[0]);
+// }
+    // }
+// }
+
+
+
+    // document.addEventListener('click', (e) => {
+    //         if (e.target.id == 'next') {
+    //                 quest.innerText = 'Question 2'
+    //                 img.src = qImgURL[1].imgURL;
+    //                 ans1.innerText = qImgURL[i].choices[0];
+    //                 ans2.innerText = qImgURL[i].choices[1];
+    //                 ans3.innerText = qImgURL[i].choices[2];
+    //                 // let ans3 = 'correct';
+    //                 ans4.innerText = qImgURL[i].choices[3];
+    //                 whiteDivs();
+    //                 isGameFinished = true;
+    //                 }
+    //             }
+    //         )
