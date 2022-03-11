@@ -1,24 +1,24 @@
-
+let ans1 = document.querySelector('#ansbtn1');
+let ans2 = document.querySelector('#ansbtn2');
+let ans3 = document.querySelector('#ansbtn3');
+let ans4 = document.querySelector('#ansbtn4');
+let answers = document.querySelectorAll('.ans');
 let correct = document.querySelectorAll('#correct');
-let incorrect = document.querySelectorAll('#ansbtn');
-let nextbtn = document.querySelector('#next');
+let count = 0;
 let img = document.querySelector('#img');
-let ans1 = document.querySelector('#ansbtn1')
-let ans2 = document.querySelector('#ansbtn2')
-let ans3 = document.querySelector('#ansbtn3')
-let ans4 = document.querySelector('#ansbtn4')
-let quest = document.querySelector('h1')
-let answers = document.querySelectorAll('.ans')
+let incorrect = document.querySelectorAll('#ansbtn');
+let isGameFinished = false;
+let nextbtn = document.querySelector('#next');
+let page = 0;
+let score = 0;
+let totalScore = document.querySelector('h2');
+let quest = document.querySelector('h1');
 let whiteDivs = () => {
     answers[0].style.backgroundColor = 'white';
     answers[1].style.backgroundColor = 'white';
     answers[2].style.backgroundColor = 'white';
     answers[3].style.backgroundColor = 'white';
 }
-let page = 0;
-let totalScore = document.querySelector('h2')
-
-let isGameFinished = false;
 
 const qImgURL = [
     {
@@ -83,14 +83,14 @@ const qImgURL = [
     },
 ]
 
+
 ansbtn1.innerText = qImgURL[page].choices[0];
 ansbtn2.innerText = qImgURL[page].choices[1];
 ansbtn3.innerText = qImgURL[page].choices[2];
 ansbtn4.innerText = qImgURL[page].choices[3];
 
 //NIK HELP
-let score = 0
-let count = 0;
+
 let checkAnswer = (e, buttonID) => {
     let buttonList = ['ansbtn1', 'ansbtn2', 'ansbtn3', 'ansbtn4']
     totalScore.style.visibility = 'visible';
@@ -99,32 +99,33 @@ let checkAnswer = (e, buttonID) => {
     } else {
         buttonList.forEach(btn => {
             if (e.target.id == `ansbtn${buttonID}` && btn == `ansbtn${buttonID}` && count < 1 && page < 9) {
-                e.target.style.backgroundColor = 'green' 
+                e.target.style.backgroundColor = '#00FF00'
                 nextbtn.style.display = 'center'
                 nextbtn.style.visibility = 'visible'
                 isGameFinished = true
                 count++
-                totalScore.innerText = `Score:` + score +1
+                totalScore.innerText = `Score: ${score +=1}`
             } else if (e.target.id !== `ansbtn${buttonID}` && e.target.id == btn && count < 1 && page < 9) {
-                e.target.style.backgroundColor = 'red'
+                e.target.style.backgroundColor = '#ff2400'
                 nextbtn.style.display = 'center'
                 nextbtn.style.visibility = 'visible'
                 isGameFinished = true
                 count++
+                totalScore.innerText = `Score: ${score}`
             } else if (e.target.id == `ansbtn${buttonID}` && btn == `ansbtn${buttonID}` && count < 1 && page === 9) {
-                e.target.style.backgroundColor = 'green' 
+                e.target.style.backgroundColor = '#00FF00'
                 isGameFinished = true
                 count++
                 nextbtn.style.display = 'center'
                 nextbtn.style.visibility = 'visible'
-                nextbtn.innerText = `Your score is #`
+                nextbtn.innerText = `Your score is ${score}/10!`
             } else if (e.target.id !== `ansbtn${buttonID}` && e.target.id == btn && count < 1 && page === 9) {
                 e.target.style.backgroundColor = 'red'
                 isGameFinished = true
                 count++
                 nextbtn.style.display = 'center'
                 nextbtn.style.visibility = 'visible'
-                nextbtn.innerText = `Your score is #`
+                nextbtn.innerText = `Your score is ${score}/10!`
                 }
             } 
         )
@@ -141,7 +142,6 @@ document.addEventListener('click', (e) => {
 document.addEventListener('click', (e) => {
     isGameFinished = false;
         if (e.target.id == 'next') {
-            // console.log(page)
 //PETER HELPED ME WITH page++
             page++;
             img.src = qImgURL[page].imgURL;
@@ -161,7 +161,7 @@ document.addEventListener('click', (e) => {
 
     }   
 )
-} else {}
+}
 
 
 //TO DO 
