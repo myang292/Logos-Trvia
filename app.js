@@ -13,22 +13,23 @@ let page = 0;
 let score = 0;
 let totalScore = document.querySelector('h2');
 let quest = document.querySelector('h1');
-let whiteDivs = () => {
-    answers[0].style.backgroundColor = 'white';
-    answers[1].style.backgroundColor = 'white';
-    answers[2].style.backgroundColor = 'white';
-    answers[3].style.backgroundColor = 'white';
+let questionCount = 1;
+let blackButtons = () => {
+    answers[0].style.backgroundColor = 'black';
+    answers[1].style.backgroundColor = 'black';
+    answers[2].style.backgroundColor = 'black';
+    answers[3].style.backgroundColor = 'black';
 }
 
 const qImgURL = [
     {
         imgURL: 'https://i.insider.com/500851a2ecad04bd32000001?width=600&format=jpeg&auto=webp',
-        choices: ['Frito Lay', 'Fritos', 'Lay', 'Ruffles'],
+        choices: [`Frito Lay's`, 'Fritos', `Lay's`, 'Ruffles'],
         answer: 2,
         buttonID: 3
     },
     {
-        imgURL: 'https://upload.wikimedia.org/wikipedia/commons/a/a0/Wikipedia-logo-blank.png',
+        imgURL: 'https://ih1.redbubble.net/image.1094052976.4989/poster,504x498,f8f8f8-pad,600x600,f8f8f8.jpg',
         choices: ['Wikipedia', 'Wiki Commons', 'Wiki How', 'Wiki Fandom'],
         answer: 0,
         buttonID: 1
@@ -40,7 +41,7 @@ const qImgURL = [
         buttonID: 4
     },
     {
-        imgURL: 'https://www.jetpunk.com/img/user-photo-library/e5/e5ba85bd17-450.png',
+        imgURL: 'https://p3y6v9e6.stackpathcdn.com/wp-content/uploads/zikoko/2020/08/BMW.jpg',
         choices: ['Acura', 'Rolls Royce', 'Subaru', 'BMW'],
         answer: 3,
         buttonID: 4
@@ -64,13 +65,13 @@ const qImgURL = [
         buttonID: 4
     }, 
     {
-        imgURL: 'https://www.jetpunk.com/img/user-photo-library/42/42711cbcde-450.png',
+        imgURL: 'https://1000logos.net/wp-content/uploads/2017/05/Color-PlayStation-Logo.jpg',
         choices: ['Gamecube', 'Xbox', 'Playstation', 'Gameboy Color'],
         answer: 2,
         buttonID: 3
     }, 
     {
-        imgURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/2339px-McDonald%27s_Golden_Arches.svg.png',
+        imgURL: 'https://www.pngitem.com/pimgs/m/17-171077_mcdonalds-logo-brand-png-clip-art-t-logo.png',
         choices: ['McDonalds', 'Burger King', 'Five Guys', "Arby's"],
         answer: 0,
         buttonID: 1
@@ -89,8 +90,8 @@ ansbtn2.innerText = qImgURL[page].choices[1];
 ansbtn3.innerText = qImgURL[page].choices[2];
 ansbtn4.innerText = qImgURL[page].choices[3];
 
-//NIK HELP
 
+//NIK HELPED WITH LOGIC
 let checkAnswer = (e, buttonID) => {
     let buttonList = ['ansbtn1', 'ansbtn2', 'ansbtn3', 'ansbtn4']
     totalScore.style.visibility = 'visible';
@@ -99,39 +100,44 @@ let checkAnswer = (e, buttonID) => {
     } else {
         buttonList.forEach(btn => {
             if (e.target.id == `ansbtn${buttonID}` && btn == `ansbtn${buttonID}` && count < 1 && page < 9) {
-                e.target.style.backgroundColor = '#00FF00'
+                e.target.style.backgroundColor = '#7fe960'
                 nextbtn.style.display = 'center'
                 nextbtn.style.visibility = 'visible'
                 isGameFinished = true
                 count++
                 totalScore.innerText = `Score: ${score +=1}`
             } else if (e.target.id !== `ansbtn${buttonID}` && e.target.id == btn && count < 1 && page < 9) {
-                e.target.style.backgroundColor = '#ff2400'
+                e.target.style.backgroundColor = '#e05656'
                 nextbtn.style.display = 'center'
                 nextbtn.style.visibility = 'visible'
                 isGameFinished = true
                 count++
                 totalScore.innerText = `Score: ${score}`
             } else if (e.target.id == `ansbtn${buttonID}` && btn == `ansbtn${buttonID}` && count < 1 && page === 9) {
-                e.target.style.backgroundColor = '#00FF00'
+                e.target.style.backgroundColor = '#7fe960'
                 isGameFinished = true
                 count++
                 nextbtn.style.display = 'center'
                 nextbtn.style.visibility = 'visible'
+                nextbtn.style.color = 'black'
                 nextbtn.innerText = `Your score is ${score}/10!`
+                nextbtn.style.backgroundColor = '#7cff01'
             } else if (e.target.id !== `ansbtn${buttonID}` && e.target.id == btn && count < 1 && page === 9) {
-                e.target.style.backgroundColor = 'red'
+                e.target.style.backgroundColor = '#e05656'
                 isGameFinished = true
                 count++
                 nextbtn.style.display = 'center'
                 nextbtn.style.visibility = 'visible'
+                nextbtn.style.color = 'black'
                 nextbtn.innerText = `Your score is ${score}/10!`
+                nextbtn.style.backgroundColor = '#7cff01'
                 }
             } 
         )
     }
 }
 
+// PETER HELPED ME WITH LOGIC
 if (page < 9) {
 document.addEventListener('click', (e) => {
     let buttonID = qImgURL[page].buttonID;
@@ -142,7 +148,6 @@ document.addEventListener('click', (e) => {
 document.addEventListener('click', (e) => {
     isGameFinished = false;
         if (e.target.id == 'next') {
-//PETER HELPED ME WITH page++
             page++;
             img.src = qImgURL[page].imgURL;
             ans1.innerText = qImgURL[page].choices[0];
@@ -150,8 +155,9 @@ document.addEventListener('click', (e) => {
             ans3.innerText = qImgURL[page].choices[2];
             ans4.innerText = qImgURL[page].choices[3]; 
             nextbtn.style.visibility = 'hidden';
-            whiteDivs();
+            blackButtons();
             count = 0;
+            quest.innerText = `Question ${questionCount += 1}`
         }
         document.addEventListener('click', (e) => {
             let buttonID = qImgURL[page].buttonID;
@@ -164,5 +170,3 @@ document.addEventListener('click', (e) => {
 }
 
 
-//TO DO 
-    //STOP QUESTIONS AT 9
