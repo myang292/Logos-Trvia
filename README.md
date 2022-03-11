@@ -5,8 +5,7 @@
 
 ***
 
-### Trello
-#### https://trello.com/b/khUvJbAl/food-logos
+### [Trello Board](https://trello.com/b/khUvJbAl/food-logos)
 
 ***
 
