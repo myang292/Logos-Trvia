@@ -18,8 +18,6 @@ let whiteDivs = () => {
 let page = 0;
 let totalScore = document.querySelector('h2')
 
-// console.log(totalScore)
-
 let isGameFinished = false;
 
 const qImgURL = [
@@ -72,7 +70,7 @@ const qImgURL = [
         buttonID: 3
     }, 
     {
-        imgURL: 'http://upload.wikimedia.org/wikipedia/commons/3/36/McDonald%27s_Golden_Arches.svgv',
+        imgURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/McDonald%27s_Golden_Arches.svg/2339px-McDonald%27s_Golden_Arches.svg.png',
         choices: ['McDonalds', 'Burger King', 'Five Guys', "Arby's"],
         answer: 0,
         buttonID: 1
@@ -91,6 +89,7 @@ ansbtn3.innerText = qImgURL[page].choices[2];
 ansbtn4.innerText = qImgURL[page].choices[3];
 
 //NIK HELP
+let score = 0
 let count = 0;
 let checkAnswer = (e, buttonID) => {
     let buttonList = ['ansbtn1', 'ansbtn2', 'ansbtn3', 'ansbtn4']
@@ -99,46 +98,40 @@ let checkAnswer = (e, buttonID) => {
         return
     } else {
         buttonList.forEach(btn => {
-            if (e.target.id == `ansbtn${buttonID}` && btn == `ansbtn${buttonID}` && count < 1) {
-                console.log(btn)
+            if (e.target.id == `ansbtn${buttonID}` && btn == `ansbtn${buttonID}` && count < 1 && page < 9) {
                 e.target.style.backgroundColor = 'green' 
                 nextbtn.style.display = 'center'
                 nextbtn.style.visibility = 'visible'
                 isGameFinished = true
                 count++
-                // console.log('is game finished?', isGameFinished)
-            } else if (e.target.id !== `ansbtn${buttonID}` && e.target.id == btn && count < 1) {
-                console.log(btn)
+                totalScore.innerText = `Score:` + score +1
+            } else if (e.target.id !== `ansbtn${buttonID}` && e.target.id == btn && count < 1 && page < 9) {
                 e.target.style.backgroundColor = 'red'
                 nextbtn.style.display = 'center'
                 nextbtn.style.visibility = 'visible'
                 isGameFinished = true
                 count++
+            } else if (e.target.id == `ansbtn${buttonID}` && btn == `ansbtn${buttonID}` && count < 1 && page === 9) {
+                e.target.style.backgroundColor = 'green' 
+                isGameFinished = true
+                count++
+                nextbtn.style.display = 'center'
+                nextbtn.style.visibility = 'visible'
+                nextbtn.innerText = `Your score is #`
+            } else if (e.target.id !== `ansbtn${buttonID}` && e.target.id == btn && count < 1 && page === 9) {
+                e.target.style.backgroundColor = 'red'
+                isGameFinished = true
+                count++
+                nextbtn.style.display = 'center'
+                nextbtn.style.visibility = 'visible'
+                nextbtn.innerText = `Your score is #`
                 }
             } 
         )
-    
-        
-
-        // console.log('not finished yet')
-        // if (e.target.id == 'ansbtn2') {
-        //     e.target.style.backgroundColor = 'green' 
-        //     nextbtn.style.display = 'center'
-        //     nextbtn.style.visibility = 'visible'
-        //     isGameFinished = true
-            // console.log('correct!', isGameFinished)
-        // } else if (e.target.id == 'ansbtn1' || e.target.id == 'ansbtn3' || e.target.id == 'ansbtn4') {
-        //     e.target.style.backgroundColor = 'red'
-        //     nextbtn.style.display = 'center'
-        //     nextbtn.style.visibility = 'visible'
-        //     isGameFinished = true
-            // correct.style.visibility = 'hidden'
-            // console.log('false!', isGameFinished)
-            // console.log(e.style.id)
-        // }
     }
 }
 
+if (page < 9) {
 document.addEventListener('click', (e) => {
     let buttonID = qImgURL[page].buttonID;
     checkAnswer(e, buttonID);
@@ -148,8 +141,7 @@ document.addEventListener('click', (e) => {
 document.addEventListener('click', (e) => {
     isGameFinished = false;
         if (e.target.id == 'next') {
-            // document.addEventListener('click', (e2) => {
-            console.log(page)
+            // console.log(page)
 //PETER HELPED ME WITH page++
             page++;
             img.src = qImgURL[page].imgURL;
@@ -160,18 +152,7 @@ document.addEventListener('click', (e) => {
             nextbtn.style.visibility = 'hidden';
             whiteDivs();
             count = 0;
-            // console.log(correctAnswer);
-            // checkAnswer(e, buttonID);
-            // document.addEventListener('click', (e) => {
-            //     let correctAnswer = qImgURL[page].answer;
-            //     let buttonID = qImgURL[page].buttonID;
-            //     checkAnswer(e, buttonID);
-            //     }
-            // )
-            // }
-            // )
         }
-
         document.addEventListener('click', (e) => {
             let buttonID = qImgURL[page].buttonID;
             checkAnswer(e, buttonID);
@@ -180,8 +161,7 @@ document.addEventListener('click', (e) => {
 
     }   
 )
-
-let score = 0
+} else {}
 
 
 //TO DO 
