@@ -12,7 +12,9 @@
 
 ### Credits
 #### General Assembly Staff
-###### Jeremy Taubman, Brittany Morataya & classmates
+###### Jeremy Taubman
+###### Brittany Morataya
+###### lassmates
 
 <br>
 
@@ -29,6 +31,7 @@
 ###### w3schools.com
 
 <br>
+
 
 #### Pictures
 ###### [BMW](https://www.jetpunk.com/img/user-photo-library/e5/e5ba85bd17-450.png)
