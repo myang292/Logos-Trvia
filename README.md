@@ -26,14 +26,15 @@
 <br>
 
 #### Websites
-###### developer.mozilla.org
-###### stackoverflow.com
-###### w3schools.com
+###### [Developer Mozilla](developer.mozilla.org)
+###### [Stack Overflow](stackoverflow.com)
+###### [W3Schools](w3schools.com)
 
 <br>
 
 
 #### Pictures
+###### [Background](https://ak.picdn.net/shutterstock/videos/21640684/thumb/1.jpg)
 ###### [BMW](https://www.jetpunk.com/img/user-photo-library/e5/e5ba85bd17-450.png)
 ###### [Domino's](http://2.bp.blogspot.com/--DHkNIsSurk/UcD11IDiW1I/AAAAAAAAACo/01q1ErjNVKo/s1600/RGB_Blue_Type_Tile_Only_0.jpg)
 ###### [Front Page](https://play.google.com/store/apps/details?id=com.msi.logogame&hl=en_US&gl=US)
