@@ -14,7 +14,7 @@
 #### General Assembly Staff
 ###### Jeremy Taubman
 ###### Brittany Morataya
-###### lassmates
+###### Classmates
 
 <br>
 
