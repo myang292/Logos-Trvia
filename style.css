@@ -1,8 +1,8 @@
 body {
     background-image: url('https://ak.picdn.net/shutterstock/videos/21640684/thumb/1.jpg');
     background-size: cover;
+    font-family: 'Syne Mono', monospace;
     text-align: center;
-    
 }
 
 button {
@@ -11,6 +11,7 @@ button {
     border: 2px solid black;
     border-radius: 10px;
     cursor: pointer;
+    font-family: 'Syne Mono', monospace;
     height: 60px; 
     margin: 5px; 
     width: 30%;
@@ -21,16 +22,19 @@ button {
 .button:hover {
     background-color: white;
     color: black;
+    font-family: 'Syne Mono', monospace;
   }
 
 div {
     border-radius: 5px;
     border-color: black;
+    font-family: 'Syne Mono', monospace;
     opacity: 0.9
 }
 
 h1 {
     background-color: black;
+    font-family: 'Syne Mono', monospace;
     color: white;
     height: 60px;
     width: 30%;
@@ -45,6 +49,7 @@ h1 {
 
 h2 {
     background-color: black;
+    font-family: 'Syne Mono', monospace;
     color: white;
     height: 45px;
     width: 10%;
@@ -60,6 +65,14 @@ h2 {
 img {
     height: 250px;
     border-radius: 20px;
+}
+
+p {
+    background-color: black;
+    border-radius: 10px;
+    color: white;
+    opacity: .8;
+    font-family: 'Syne Mono', monospace;
 }
 
 .column1 {
@@ -111,12 +124,14 @@ img {
     font-size: 20px;
     background-color: black;
     opacity: .8;
+    font-family: 'Syne Mono', monospace;
 }
 
 #btn2 {
     font-size: 20px;
     background-color: black;
     opacity: .8;
+    font-family: 'Syne Mono', monospace;
 }
 
 #correct {
@@ -124,6 +139,7 @@ img {
     font-size: 20px;
     height: 60px;
     width: 100%;
+    font-family: 'Syne Mono', monospace;
 }
 
 #next {
@@ -131,6 +147,7 @@ img {
     width: 25%;
     background-color: black;
     opacity: .8;
+    font-family: 'Syne Mono', monospace;
 }
 
 #small {
@@ -138,4 +155,5 @@ img {
     height: 30px;
     width: 15%;
     opacity: .8;
+    font-family: 'Syne Mono', monospace;
 }
